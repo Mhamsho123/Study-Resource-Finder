@@ -1,3 +1,93 @@
 body{
     text-align: center;
+    margin: 0;
+
+}
+
+.title-container{
+    display: flex;
+    gap: 100px;
+    padding-top: 30px;
+    background: url(https://img.freepik.com/premium-photo/many-old-books-wooden-background-source-information-open-book-indoor-home-library-knowledge-is-power_157947-1809.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    min-height: 150px;
+}
+
+.title-name{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 30px;
+
+    color: white;
+}
+
+.title{
+    margin-bottom: 0px;
+}
+.title-slogan{
+    margin-top: 5px
+}
+
+
+.lst-container{
+    margin-left: 10px;
+}
+
+
+.title-lst{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin: 30px 0px 30px 200px;
+
+}
+
+.lst{
+    list-style-type: none;
+    background-color: lightblue;
+    width: 80px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rendered-movies{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+
+.classContainer{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+
+.classContainer:hover{
+    background-color: lightblue;
+}
+
+.search-container{
+    margin-top: 30px;
+}
+
+.search-classes{
+    width: 20%;
+    max-width: 400px;
+    min-width: 180px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
 }

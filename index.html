@@ -7,17 +7,28 @@
 </head>
 <body>
     <div>
-        <div>
-            <h1>Study Reasource Finder</h1>
-            <h3>Find different reasoures in order to take your skills to the next level.</h3>
+        <div class="title-container">
+            <div class="title-name">
+                <h1 class="title">Study Reasource Finder</h1>
+                <h3 class="title-slogan">Find different reasoures in order to take your skills to the next level.</h3>
+            </div>
+            <div class="lst-container">
+                <ul class="title-lst">
+                    <li class="lst">Category</li>
+                    <li class="lst">Subject</li>
+                    <li class="lst">Certification</li>
+                </ul>
+            </div>
         </div>
         <div>
-            <input class="search-classes" 
-            id="search-classes" 
-            type="text"
-            placeholder="JavaScript...."
-            >
-            <button>Search</button>
+            <div class="search-container">
+                <input class="search-classes" 
+                id="search-classes" 
+                type="text"
+                placeholder="JavaScript...."
+                >
+                <button >Search</button>
+            </div>
             <div class="rendered-movies" id="rendered-movies"></div>
         </div>
     </div>
