@@ -9,14 +9,7 @@ console.log(document.body.innerHTML)
 
 
 function classInformation(){
-    const resource = resources
-    let resourceArray = []
-
-    for(let classAttribute of resource){
-        resourceArray.push(classAttribute)
-        }
-    return resourceArray
-    
+    return resources
     }
 
 
