@@ -5,17 +5,43 @@ const searchBtnEl = document.getElementById('search-btn')
 const inputSearchEl = document.getElementById('search-classes')
 
 
-searchBtnEl.addEventListener('click', function(){
-    const userSearchQuery = inputSearchEl.value
-    console.log(userSearchQuery)
-
-})
-
-console.log(renderedMovieEl)
-
-console.log(window.location.href)
-console.log(document.body.innerHTML)
-
+searchBtnEl.addEventListener('click', function () {
+        const userSearchQuery = inputSearchEl.value.trim().toLowerCase();
+        const eachClass = classInformation();
+        let newHtml = "";
+    
+        for (let classAttr of eachClass) {
+            if (
+                classAttr.title.toLowerCase().includes(userSearchQuery) ||
+                classAttr.category.toLowerCase().includes(userSearchQuery) ||
+                classAttr.description.toLowerCase().includes(userSearchQuery) ||
+                classAttr.difficulty.toLowerCase().includes(userSearchQuery) ||
+                classAttr.time.toLowerCase().includes(userSearchQuery) ||
+                classAttr.price.toLowerCase().includes(userSearchQuery)
+            ) {
+                newHtml += `
+                <div class="classContainer" id="${classAttr.id}">
+                    <h2>${classAttr.title}</h2>
+                    <p>${classAttr.category}</p>
+                    <div>
+                        <h6>Difficulty ${classAttr.difficulty}</h6>
+                        <h6>Time ${classAttr.time}</h6>
+                        <h6>Price ${classAttr.price}</h6>
+                    </div>
+                    <div>
+                        <h4>Description</h4>
+                        <h5>${classAttr.description}</h5>
+                    </div>
+                </div>`;
+            }
+        }
+    
+        if (newHtml === "") {
+            newHtml = "<p>No results found</p>";
+        }
+    
+        renderedMovieEl.innerHTML = newHtml;
+    });
 
 function classInformation(){
     return resources
