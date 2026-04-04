@@ -8,18 +8,18 @@ console.log(window.location.href)
 console.log(document.body.innerHTML)
 
 
-function classInformation(){
+function classInformation() {
     return resources
-    }
+}
 
 
-function renderClasses(){
+function renderClasses() {
     const eachClass = classInformation()
     let html = ""
 
-    for(let className of eachClass){
-        html += 
-    `<div class="classContainer" id="${className.id}">
+    for (let className of eachClass) {
+        html +=
+            `<div class="classContainer" id="${className.id}">
         <h2>${className.title}</h2>
         <p>${className.category}</p>
         <div>
