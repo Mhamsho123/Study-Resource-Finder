@@ -6,20 +6,20 @@ const inputSearchEl = document.getElementById('search-classes')
 
 
 searchBtnEl.addEventListener('click', function () {
-        const userSearchQuery = inputSearchEl.value.trim().toLowerCase();
-        const eachClass = classInformation();
-        let newHtml = "";
-    
-        for (let classAttr of eachClass) {
-            if (
-                classAttr.title.toLowerCase().includes(userSearchQuery) ||
-                classAttr.category.toLowerCase().includes(userSearchQuery) ||
-                classAttr.description.toLowerCase().includes(userSearchQuery) ||
-                classAttr.difficulty.toLowerCase().includes(userSearchQuery) ||
-                classAttr.time.toLowerCase().includes(userSearchQuery) ||
-                classAttr.price.toLowerCase().includes(userSearchQuery)
-            ) {
-                newHtml += `
+    const userSearchQuery = inputSearchEl.value.trim().toLowerCase();
+    const eachClass = classInformation();
+    let newHtml = "";
+
+    for (let classAttr of eachClass) {
+        if (
+            classAttr.title.toLowerCase().includes(userSearchQuery) ||
+            classAttr.category.toLowerCase().includes(userSearchQuery) ||
+            classAttr.description.toLowerCase().includes(userSearchQuery) ||
+            classAttr.difficulty.toLowerCase().includes(userSearchQuery) ||
+            classAttr.time.toLowerCase().includes(userSearchQuery) ||
+            classAttr.price.toLowerCase().includes(userSearchQuery)
+        ) {
+            newHtml += `
                 <div class="classContainer" id="${classAttr.id}">
                     <h2>${classAttr.title}</h2>
                     <p>${classAttr.category}</p>
@@ -33,28 +33,28 @@ searchBtnEl.addEventListener('click', function () {
                         <h5>${classAttr.description}</h5>
                     </div>
                 </div>`;
-            }
         }
-    
-        if (newHtml === "") {
-            newHtml = "<p>No results found</p>";
-        }
-    
-        renderedMovieEl.innerHTML = newHtml;
-    });
-
-function classInformation(){
-    return resources
     }
 
+    if (newHtml === "") {
+        newHtml = "<p>No results found</p>";
+    }
 
-function renderClasses(){
+    renderedMovieEl.innerHTML = newHtml;
+});
+
+function classInformation() {
+    return resources
+}
+
+
+function renderClasses() {
     const eachClass = classInformation()
     let html = ""
 
-    for(let className of eachClass){
-        html += 
-    `<div class="classContainer" id="${className.id}">
+    for (let className of eachClass) {
+        html +=
+            `<div class="classContainer" id="${className.id}">
         <h2>${className.title}</h2>
         <p>${className.category}</p>
         <div>
