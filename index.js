@@ -1,6 +1,15 @@
 import { resources } from "./data.js";
 
 const renderedMovieEl = document.getElementById('rendered-movies')
+const searchBtnEl = document.getElementById('search-btn')
+const inputSearchEl = document.getElementById('search-classes')
+
+
+searchBtnEl.addEventListener('click', function(){
+    const userSearchQuery = inputSearchEl.value
+    console.log(userSearchQuery)
+
+})
 
 console.log(renderedMovieEl)
 
@@ -37,6 +46,4 @@ function renderClasses(){
     console.log(html)
     renderedMovieEl.innerHTML = html
 }
-
-
 renderClasses()
